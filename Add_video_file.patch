@@ -1,0 +1,18 @@
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/modules.xml	(date 1523473319000)
++++ .idea/modules.xml	(revision )
+@@ -2,9 +2,9 @@
+ <project version="4">
+   <component name="ProjectModuleManager">
+     <modules>
++      <module fileurl="file://$PROJECT_DIR$/DieX.iml" filepath="$PROJECT_DIR$/DieX.iml" />
+       <module fileurl="file://C:\Users\2003015\Desktop\DieX2\DieX.iml" filepath="C:\Users\2003015\Desktop\DieX2\DieX.iml" />
+       <module fileurl="file://C:\Users\Mason\Desktop\DieX\DieX.iml" filepath="C:\Users\Mason\Desktop\DieX\DieX.iml" />
+-      <module fileurl="file://$PROJECT_DIR$/DieX2.iml" filepath="$PROJECT_DIR$/DieX2.iml" />
+       <module fileurl="file://C:\Users\2007015\AndroidStudioProjects\DieX\DieX2.iml" filepath="C:\Users\2007015\AndroidStudioProjects\DieX\DieX2.iml" />
+       <module fileurl="file://C:\Users\1806357\AndroidStudioProjects\DieX\DieX2.iml" filepath="C:\Users\1806357\AndroidStudioProjects\DieX\DieX2.iml" />
+       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />

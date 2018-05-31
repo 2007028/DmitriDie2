@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://C:\Users\KDT\Downloads\DieX-master\DieX.iml" filepath="C:\Users\KDT\Downloads\DieX-master\DieX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DieX-master.iml" filepath="$PROJECT_DIR$/DieX-master.iml" />
+      <module fileurl="file://C:\Users\1806357\AndroidStudioProjects\DieX\DieX2.iml" filepath="C:\Users\1806357\AndroidStudioProjects\DieX\DieX2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+    </modules>
+  </component>
+</project>
