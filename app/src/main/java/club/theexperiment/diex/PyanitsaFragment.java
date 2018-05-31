@@ -20,7 +20,7 @@ import java.util.List;
  * Created by KDT on 5/30/2018.
  */
 
-public class PyanitsaFragment extends android.support.v4.app.ListFragment {
+public class PyanitsaFragment extends android.support.v4.app.Fragment {
 
     int[] cards = {14, 14, 14, 14, 13, 13, 13, 13, 12, 12, 12, 12, 11, 11, 11, 11, 10, 10, 10, 10, 9, 9,
             9, 9, 8, 8, 8, 8, 7, 7, 7, 7, 6, 6, 6, 6};
@@ -32,6 +32,7 @@ public class PyanitsaFragment extends android.support.v4.app.ListFragment {
     private Button nextButton;
     private int p1win;
     private int p2win;
+    String x; String y;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -45,8 +46,8 @@ public class PyanitsaFragment extends android.support.v4.app.ListFragment {
         //Shuffle cards
             for (int i = 35; i>0; i--) {
                 //Set sides to specified number of sides
-                Log.i(LOG_TAG, "B");
-                MainActivity.dice.setNumberOfDice(i);
+
+                MainActivity.dice = new dCustom(1, i);
                 MainActivity.dice.roll(1);
                 rollStrings = MainActivity.dice.getRolls();
 
@@ -55,14 +56,15 @@ public class PyanitsaFragment extends android.support.v4.app.ListFragment {
                 MainActivity.dice.roll(1);
                 rollStrings = MainActivity.dice.getRolls();
                 playertwo.add(cards[rollStrings[0]]);
+
             }
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (playerone.size() > 0 && playertwo.size() > 0) {
-                    int pl = Integer.valueOf((String) playerone.get(0));
-                    int p2 = Integer.valueOf((String) playertwo.get(0));
+                    int pl = (int) playerone.get(0);
+                    int p2 = (int) playertwo.get(0);
                     while (pl == p2) {
                         int i = 0;
 
@@ -71,7 +73,7 @@ public class PyanitsaFragment extends android.support.v4.app.ListFragment {
                             playerone.remove(playerone.get(0));
                             playertwo.remove(playertwo.get(0));
                             i++;
-                            if (Integer.valueOf((String)playerone.get(i)) > Integer.valueOf((String)playertwo.get(i))) {
+                            if ((int) playerone.get(i) > (int) playertwo.get(i)) {
                                 for (int k = 0; k < bucket.size(); k++) {
                                     playerone.add(bucket.get(i));
 
@@ -80,7 +82,7 @@ public class PyanitsaFragment extends android.support.v4.app.ListFragment {
                                 break;
                             }
 
-                                if (Integer.valueOf((String)playerone.get(i)) < Integer.valueOf((String)playertwo.get(i))) {
+                                if ((int) playerone.get(i) < (int) playertwo.get(i)) {
                                     for (int k = 0; k < bucket.size(); k++) {
                                         playertwo.add(bucket.get(i));
 
@@ -114,31 +116,26 @@ public class PyanitsaFragment extends android.support.v4.app.ListFragment {
                     p1win += 1;
                 }
 
-                Integer.toString(p1win);
-                Integer.toString(p2win);
+                x = Integer.toString(p1win);
+                y = Integer.toString(p2win);
 
 
             }
         });
-
+        Log.i(LOG_TAG, "B");
 
         //ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(), R.layout.listview, playerone);
         //ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<>(getActivity(), R.layout.listview, playertwo);
         //Display String array
         //setListAdapter(arrayAdapter);
-        //Hide Keyboard
-        InputMethodManager inputManager = (InputMethodManager)
-                getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-
-        inputManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(),
-                InputMethodManager.HIDE_NOT_ALWAYS);
 
 
-        TextView plwins = (TextView) rootView.findViewById(R.id.plwins);
-        plwins.setText(p1win);
 
-        TextView p2wins = (TextView) rootView.findViewById(R.id.p2wins);
-        p2wins.setText(p2win);
+        TextView plwinsx = (TextView) rootView.findViewById(R.id.plwins);
+        plwinsx.setText(x);
+
+        TextView p2winsx = (TextView) rootView.findViewById(R.id.p2wins);
+        p2winsx.setText(y);
 
 
 
