@@ -29,6 +29,8 @@ public class PyanitsaFragment extends android.support.v4.app.ListFragment {
     private int[] rollStrings;
     private final static String LOG_TAG = MainActivity.class.getSimpleName();
     private Button nextButton;
+    private int p1win;
+    private int p2win;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -98,6 +100,16 @@ public class PyanitsaFragment extends android.support.v4.app.ListFragment {
                     }
 
                 }}
+
+                else if (playerone.size() < 0) {
+
+                    p2win += 1;
+                }
+
+                else if (playerone.size() > 0) {
+
+                    p1win += 1;
+                }
             }
         });
         //ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(), R.layout.listview, playerone);
