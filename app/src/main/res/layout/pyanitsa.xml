@@ -15,5 +15,20 @@
             android:layout_height="wrap_content"
             android:text="Next"/>
 
+        <TextView
+            android:id="@+id/plwins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Playerone wins: "/>
+
+        <TextView
+            android:id="@+id/p2wins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Player two wins: "/>
+
+
     </LinearLayout>
 </LinearLayout>

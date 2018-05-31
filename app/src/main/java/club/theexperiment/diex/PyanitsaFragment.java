@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,8 @@ public class PyanitsaFragment extends android.support.v4.app.ListFragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         View rootView = inflater.inflate(R.layout.pyanitsa, container, false);
         nextButton = (Button) rootView.findViewById(R.id.nextButton);
+
+
 
         Log.d(LOG_TAG, "A");
         //Shuffle cards
@@ -110,8 +113,15 @@ public class PyanitsaFragment extends android.support.v4.app.ListFragment {
 
                     p1win += 1;
                 }
+
+                Integer.toString(p1win);
+                Integer.toString(p2win);
+
+
             }
         });
+
+
         //ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(), R.layout.listview, playerone);
         //ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<>(getActivity(), R.layout.listview, playertwo);
         //Display String array
@@ -124,6 +134,11 @@ public class PyanitsaFragment extends android.support.v4.app.ListFragment {
                 InputMethodManager.HIDE_NOT_ALWAYS);
 
 
+        TextView plwins = (TextView) rootView.findViewById(R.id.plwins);
+        plwins.setText(p1win);
+
+        TextView p2wins = (TextView) rootView.findViewById(R.id.p2wins);
+        p2wins.setText(p2win);
 
 
 
